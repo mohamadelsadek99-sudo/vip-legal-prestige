@@ -21,12 +21,12 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <a href="#home" className="flex items-center gap-3">
-            <img src={logo} alt="VIP Legal Academy" className="h-14 w-14 rounded-full object-cover border-2 border-gold" />
+            <img src={logo} alt="VIP Legal Academy" className="h-14 w-14 rounded-full object-cover object-center border-2 border-gold" style={{ objectPosition: 'center' }} />
             <div className="hidden sm:block">
-              <h1 className="text-gold font-bold text-lg font-playfair tracking-wide">
+              <h1 className="text-gold font-bold text-2xl font-playfair tracking-wide">
                 <span className="text-gold-light">V</span>I<span className="text-gold-light">P</span>
               </h1>
-              <p className="text-gold/70 text-xs">Legal Academy</p>
+              <p className="text-gold/70 text-sm">Legal Academy</p>
             </div>
           </a>
 
