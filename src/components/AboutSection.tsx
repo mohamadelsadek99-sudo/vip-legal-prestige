@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { ChevronLeft, ChevronRight, Scale, Target, Award, Users } from "lucide-react";
-import logoImg from "@/assets/gallery/logo.jpg";
+import logoImg from "@/assets/gallery/logo-original.jpg";
 import training1 from "@/assets/gallery/training-1.jpg";
 import training2 from "@/assets/gallery/training-2.jpg";
 import training3 from "@/assets/gallery/training-3.jpg";
