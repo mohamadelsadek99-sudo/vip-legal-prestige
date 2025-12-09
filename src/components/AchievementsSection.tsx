@@ -65,9 +65,9 @@ const AchievementsSection = () => {
         </div>
 
         {/* Milestones */}
-        <div className="bg-navy-dark/50 border border-gold/20 rounded-2xl p-8 md:p-12">
+        <div className="bg-navy-dark/50 border border-gold/20 rounded-2xl p-8 md:p-12 mx-4 md:mx-8">
           <h3 className="text-2xl font-bold text-gold text-center mb-8 font-playfair">
-            أبرز محطاتنا
+            مراحل التفوّق
           </h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {milestones.map((milestone, index) => (
