@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Scale, ChevronLeft, ChevronRight, CreditCard, Smartphone, Building2, X } from "lucide-react";
+import { Scale, ChevronLeft, ChevronRight, X } from "lucide-react";
 
 interface Course {
   title: string;
@@ -578,12 +578,6 @@ const allCourses: Course[][] = [
   ],
 ];
 
-const paymentMethods = [
-  { icon: CreditCard, name: "فيزا / ماستركارد", description: "الدفع ببطاقات الائتمان" },
-  { icon: Smartphone, name: "فودافون كاش / المحافظ الإلكترونية", description: "الدفع عبر المحافظ الإلكترونية" },
-  { icon: Building2, name: "تحويل بنكي", description: "التحويل المباشر للحساب البنكي" },
-];
-
 const CoursesSection = () => {
   const [currentPage, setCurrentPage] = useState(0);
   const [expandedCourse, setExpandedCourse] = useState<string | null>(null);
@@ -721,28 +715,6 @@ const CoursesSection = () => {
                 <div className="space-y-6">
                   <div className="text-foreground whitespace-pre-line leading-relaxed text-lg">
                     {allCourses.flat().find(c => c.title === expandedCourse)?.content}
-                  </div>
-
-                  {/* Payment Methods */}
-                  <div className="mt-8 pt-6 border-t border-gold/20">
-                    <h4 className="text-xl font-bold text-gold mb-4 text-center">طرق الدفع المتاحة</h4>
-                    <div className="grid md:grid-cols-3 gap-4">
-                      {paymentMethods.map((method, idx) => {
-                        const Icon = method.icon;
-                        return (
-                          <div
-                            key={idx}
-                            className="flex items-center gap-3 p-4 rounded-xl bg-navy/50 border border-gold/20 hover:border-gold/40 transition-all duration-300"
-                          >
-                            <Icon className="w-8 h-8 text-gold" />
-                            <div>
-                              <div className="text-foreground font-bold">{method.name}</div>
-                              <div className="text-muted-foreground text-sm">{method.description}</div>
-                            </div>
-                          </div>
-                        );
-                      })}
-                    </div>
                   </div>
 
                   {/* WhatsApp CTA */}
