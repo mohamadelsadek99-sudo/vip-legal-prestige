@@ -1,7 +1,22 @@
+import { useState, useEffect } from "react";
 import { Scale, ChevronDown } from "lucide-react";
 import logo from "@/assets/gallery/logo.jpg";
 
+const promotionalMessages = [
+  "⚖️ لأن التميز القانوني يبدأ بالاختيار الصحيح — خصم 50% على جميع خدماتنا",
+  "🔔 لا تفوّت الفرصة! خصم 50% على كل الخدمات القانونية الآن"
+];
+
 const HeroSection = () => {
+  const [currentMessage, setCurrentMessage] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentMessage((prev) => (prev + 1) % promotionalMessages.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background with Logo Pattern */}
@@ -26,7 +41,19 @@ const HeroSection = () => {
       <div className="absolute right-0 bottom-1/4 w-32 h-px bg-gradient-to-r from-transparent via-gold/50 to-transparent" />
 
       <div className="container mx-auto px-4 pt-20 relative z-10">
-        <div className="flex flex-col items-center text-center max-w-5xl mx-auto">
+        {/* Promotional Messages Banner */}
+        <div className="absolute top-24 left-0 right-0 overflow-hidden">
+          <div 
+            key={currentMessage}
+            className="animate-marquee whitespace-nowrap text-gold font-bold text-lg md:text-xl py-3 bg-gold/10 backdrop-blur-sm border-y border-gold/20"
+          >
+            <span className="inline-block px-8">{promotionalMessages[currentMessage]}</span>
+            <span className="inline-block px-8">{promotionalMessages[currentMessage]}</span>
+            <span className="inline-block px-8">{promotionalMessages[currentMessage]}</span>
+          </div>
+        </div>
+
+        <div className="flex flex-col items-center text-center max-w-5xl mx-auto mt-16">
           {/* Logo */}
           <div className="relative mb-8 animate-scale-in">
             <div className="absolute inset-0 bg-gold/20 rounded-full blur-2xl scale-150" />
@@ -53,7 +80,7 @@ const HeroSection = () => {
               <div className="w-16 h-px bg-gradient-to-l from-transparent to-gold" />
             </div>
             <h3 className="text-2xl md:text-3xl text-foreground font-tajawal font-bold">
-              الأكاديمية القانونية
+              أكاديمية كبار الشخصيات القانونية ⚖️
             </h3>
           </div>
 

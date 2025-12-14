@@ -10,8 +10,8 @@ const Navbar = () => {
     { href: "#about", label: "من نحن" },
     { href: "#courses", label: "الدورات" },
     { href: "#services", label: "خدماتنا" },
+    { href: "#company-services", label: "استشارات الشركات" },
     { href: "#achievements", label: "إنجازاتنا" },
-    { href: "#faq", label: "الأسئلة الشائعة" },
     { href: "#contact", label: "تواصل معنا" },
   ];
 
