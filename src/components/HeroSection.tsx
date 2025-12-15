@@ -26,8 +26,8 @@ const promotionalMessages = [
   "🔔 لا تفوّت الفرصة! خصم 50% على كل الخدمات القانونية الآن"
 ];
 
-const peopleImages = [people1, people2, people3, training1, training2, training3, training4, training5];
-const courseImages = [course1, course2, course3, course4, course5, course6, course7];
+const peopleImages = [logo, people1, people2, people3, training1, training2, training3, training4, training5];
+const courseImages = [logo, course1, course2, course3, course4, course5, course6, course7];
 
 const HeroSection = () => {
   const [currentPeopleImage, setCurrentPeopleImage] = useState(0);
@@ -114,13 +114,13 @@ const HeroSection = () => {
           {/* Image Carousels */}
           <div className="flex flex-col md:flex-row gap-6 mb-10 w-full max-w-4xl animate-fade-in-up animation-delay-100">
             {/* People Images - Right */}
-            <div className="flex-1 relative h-48 md:h-64 rounded-xl overflow-hidden border-2 border-gold/30 shadow-gold">
+            <div className="flex-1 relative h-64 md:h-80 rounded-xl overflow-hidden border-2 border-gold/30 shadow-gold">
               {peopleImages.map((img, index) => (
                 <img
                   key={index}
                   src={img}
                   alt={`فريق الأكاديمية ${index + 1}`}
-                  className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
+                  className={`absolute inset-0 w-full h-full object-contain bg-navy-dark transition-opacity duration-700 ${
                     index === currentPeopleImage ? 'opacity-100' : 'opacity-0'
                   }`}
                 />
@@ -137,13 +137,13 @@ const HeroSection = () => {
             </div>
 
             {/* Course Images - Left */}
-            <div className="flex-1 relative h-48 md:h-64 rounded-xl overflow-hidden border-2 border-gold/30 shadow-gold">
+            <div className="flex-1 relative h-64 md:h-80 rounded-xl overflow-hidden border-2 border-gold/30 shadow-gold">
               {courseImages.map((img, index) => (
                 <img
                   key={index}
                   src={img}
                   alt={`كورسات الأكاديمية ${index + 1}`}
-                  className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
+                  className={`absolute inset-0 w-full h-full object-contain bg-navy-dark transition-opacity duration-700 ${
                     index === currentCourseImage ? 'opacity-100' : 'opacity-0'
                   }`}
                 />
