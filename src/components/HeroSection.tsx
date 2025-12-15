@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Scale, ChevronDown } from "lucide-react";
 import logo from "@/assets/gallery/logo.jpg";
+import logoBlack from "@/assets/gallery/logo-black.jpg";
 
 // People images (right carousel)
 import people1 from "@/assets/gallery/people-1.jpg";
@@ -11,6 +12,14 @@ import training2 from "@/assets/gallery/training-2.jpg";
 import training3 from "@/assets/gallery/training-3.jpg";
 import training4 from "@/assets/gallery/training-4.jpg";
 import training5 from "@/assets/gallery/training-5.jpg";
+import training6 from "@/assets/gallery/training-6.jpg";
+import training7 from "@/assets/gallery/training-7.jpg";
+import training8 from "@/assets/gallery/training-8.jpg";
+import training9 from "@/assets/gallery/training-9.jpg";
+import training10 from "@/assets/gallery/training-10.jpg";
+import training11 from "@/assets/gallery/training-11.jpg";
+import training12 from "@/assets/gallery/training-12.jpg";
+import training13 from "@/assets/gallery/training-13.jpg";
 
 // Course images (left carousel)
 import course1 from "@/assets/gallery/course-1.jpg";
@@ -20,14 +29,15 @@ import course4 from "@/assets/gallery/course-4.jpg";
 import course5 from "@/assets/gallery/course-5.jpg";
 import course6 from "@/assets/gallery/course-6.jpg";
 import course7 from "@/assets/gallery/course-7.jpg";
+import coursePromo from "@/assets/gallery/course-promo.png";
 
 const promotionalMessages = [
   "⚖️ لأن التميز القانوني يبدأ بالاختيار الصحيح — خصم 50% على جميع خدماتنا",
   "🔔 لا تفوّت الفرصة! خصم 50% على كل الخدمات القانونية الآن"
 ];
 
-const peopleImages = [logo, people1, people2, people3, training1, training2, training3, training4, training5];
-const courseImages = [logo, course1, course2, course3, course4, course5, course6, course7];
+const peopleImages = [logoBlack, people1, people2, people3, training1, training2, training3, training4, training5, training6, training7, training8, training9, training10, training11, training12, training13];
+const courseImages = [logoBlack, course1, course2, course3, course4, course5, course6, course7, coursePromo];
 
 const HeroSection = () => {
   const [currentPeopleImage, setCurrentPeopleImage] = useState(0);
