@@ -120,7 +120,9 @@ const HeroSection = () => {
                   key={index}
                   src={img}
                   alt={`فريق الأكاديمية ${index + 1}`}
-                  className={`absolute inset-0 w-full h-full object-contain bg-navy-dark transition-opacity duration-700 ${
+                  className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-700 ${
+                    index === 0 ? 'bg-black' : 'bg-navy-dark'
+                  } ${
                     index === currentPeopleImage ? 'opacity-100' : 'opacity-0'
                   }`}
                 />
@@ -143,8 +145,10 @@ const HeroSection = () => {
                   key={index}
                   src={img}
                   alt={`كورسات الأكاديمية ${index + 1}`}
-                  className={`absolute inset-0 w-full h-full object-contain bg-navy-dark transition-opacity duration-700 ${
-                    index === currentCourseImage ? 'opacity-100' : 'opacity-0'
+                  className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-700 ${
+                    index === 0 ? 'bg-black' : 'bg-navy-dark'
+                  } ${
+                    index === currentPeopleImage ? 'opacity-100' : 'opacity-0'
                   }`}
                 />
               ))}
