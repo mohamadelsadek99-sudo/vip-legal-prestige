@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Scale, ChevronDown } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import logoStar from "@/assets/gallery/logo-star.jpg";
 
 // People images (right carousel) - no duplicates
@@ -65,24 +65,23 @@ const HeroSection = () => {
       <div className="absolute right-0 bottom-1/4 w-32 h-px bg-gradient-to-r from-transparent via-gold/50 to-transparent" />
 
       <div className="container mx-auto px-4 pt-20 relative z-10">
-        {/* Promotional Messages Banner - Rounded pill shape with margin */}
-        <div className="absolute top-20 left-4 right-4 overflow-hidden">
-          <div className="animate-marquee whitespace-nowrap text-gold font-bold text-lg md:text-xl py-3 bg-gold/10 backdrop-blur-sm border border-gold/20 rounded-full">
-            {[...promotionalMessages, ...promotionalMessages, ...promotionalMessages, ...promotionalMessages].map((msg, i) => (
-              <span key={i} className="inline-block px-8">{msg}</span>
+        {/* Promotional Messages Banner - Rounded pill shape with continuous scroll */}
+        <div className="absolute top-16 left-4 right-4 overflow-hidden">
+          <div className="flex animate-marquee-slow whitespace-nowrap text-gold font-bold text-base md:text-lg py-3 bg-gold/10 backdrop-blur-sm border border-gold/20 rounded-full">
+            {[...promotionalMessages, ...promotionalMessages, ...promotionalMessages, ...promotionalMessages, ...promotionalMessages, ...promotionalMessages].map((msg, i) => (
+              <span key={i} className="inline-block px-6 md:px-10">{msg}</span>
             ))}
           </div>
         </div>
 
         <div className="flex flex-col items-center text-center max-w-5xl mx-auto mt-20">
-          {/* Logo - Cropped to show larger */}
-          <div className="relative mb-8 animate-scale-in">
+          {/* Logo - Full size to fill circle */}
+          <div className="relative mb-6 mt-8 animate-scale-in">
             <div className="absolute inset-0 bg-gold/20 rounded-full blur-2xl scale-150" />
             <img 
               src={logoStar} 
               alt="VIP Legal Academy Logo" 
-              className="w-44 h-44 md:w-56 md:h-56 rounded-full object-cover object-center border-4 border-gold shadow-gold relative z-10"
-              style={{ objectPosition: 'center 40%' }}
+              className="w-40 h-40 md:w-52 md:h-52 rounded-full object-contain bg-black border-4 border-gold shadow-gold relative z-10 p-2"
             />
           </div>
 
@@ -98,7 +97,7 @@ const HeroSection = () => {
             </h2>
             <div className="flex items-center justify-center gap-4">
               <div className="w-16 h-px bg-gradient-to-r from-transparent to-gold" />
-              <Scale className="text-gold w-8 h-8" />
+              <img src={logoStar} alt="Logo" className="w-10 h-10 rounded-full object-contain bg-black" />
               <div className="w-16 h-px bg-gradient-to-l from-transparent to-gold" />
             </div>
             <h3 className="text-2xl md:text-3xl text-foreground font-tajawal font-bold">
@@ -115,8 +114,8 @@ const HeroSection = () => {
                   key={index}
                   src={img}
                   alt={`فريق الأكاديمية ${index + 1}`}
-                  className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
-                    index === 0 ? 'bg-black object-contain' : 'bg-navy-dark'
+                  className={`absolute inset-0 w-full h-full transition-opacity duration-700 ${
+                    index === 0 ? 'bg-black object-contain p-4' : 'object-cover'
                   } ${
                     index === currentImageIndex ? 'opacity-100' : 'opacity-0'
                   }`}
@@ -140,8 +139,8 @@ const HeroSection = () => {
                   key={index}
                   src={img}
                   alt={`كورسات الأكاديمية ${index + 1}`}
-                  className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
-                    index === 0 ? 'bg-black object-contain' : 'bg-navy-dark'
+                  className={`absolute inset-0 w-full h-full transition-opacity duration-700 ${
+                    index === 0 ? 'bg-black object-contain p-4' : 'object-cover'
                   } ${
                     index === currentImageIndex ? 'opacity-100' : 'opacity-0'
                   }`}
