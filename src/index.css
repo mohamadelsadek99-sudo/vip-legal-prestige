@@ -164,13 +164,7 @@
   animation: marquee 20s linear infinite;
 }
 
-.animate-marquee-slow {
-  display: flex;
-  animation: marquee 30s linear infinite;
-}
-
-.animate-marquee:hover,
-.animate-marquee-slow:hover {
+.animate-marquee:hover {
   animation-play-state: paused;
 }
 

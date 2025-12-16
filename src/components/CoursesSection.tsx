@@ -646,7 +646,7 @@ const CoursesSection = () => {
               style={{ animationDelay: `${index * 100}ms` }}
             >
               {/* Discount Badge */}
-              <div className="absolute -top-2 -left-2 w-28 h-28 z-10">
+              <div className="absolute top-0 left-0 w-20 h-20 z-10">
                 <img 
                   src={saleBadge} 
                   alt="خصم 50%" 
@@ -655,7 +655,7 @@ const CoursesSection = () => {
               </div>
 
               {/* Icon */}
-              <div className="w-16 h-16 rounded-full bg-gold/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform mr-auto">
+              <div className="w-16 h-16 rounded-full bg-gold/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 {course.icon}
               </div>
 
@@ -667,12 +667,14 @@ const CoursesSection = () => {
                 {course.description}
               </p>
 
-              {/* Price with Vodafone Cash */}
+              {/* Price */}
               <div className="text-xl font-bold text-gold-light mb-4">
                 {course.price}
               </div>
-              <div className="flex items-center gap-2 text-xs text-muted-foreground mb-4 bg-navy/50 rounded-lg p-2">
-                <Phone className="w-4 h-4 text-red-500 flex-shrink-0" />
+
+              {/* Vodafone Cash */}
+              <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
+                <Phone className="w-4 h-4 text-red-500" />
                 <span>فودافون كاش: 01201821140</span>
               </div>
 
