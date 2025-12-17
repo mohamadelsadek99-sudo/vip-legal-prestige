@@ -615,7 +615,7 @@ const CoursesSection = () => {
               style={{ animationDelay: `${index * 100}ms` }}
             >
               {/* Discount Badge */}
-              <div className="absolute top-2 left-2 w-16 h-16 z-10">
+              <div className="absolute top-2 left-2 w-20 h-20 z-10">
                 <img 
                   src={discountBadge} 
                   alt="خصم 50%" 

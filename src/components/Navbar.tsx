@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import logoStar from "@/assets/gallery/logo-star.jpg";
+import logoNew from "@/assets/gallery/logo-new.jpg";
+import starEffect from "@/assets/gallery/star-effect.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,8 +21,11 @@ const Navbar = () => {
       <div className="container mx-auto px-6 md:px-10">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-<a href="#home" className="flex items-center gap-4">
-            <img src={logoStar} alt="VIP Legal Academy" className="h-14 w-14 rounded-full object-cover object-center border-2 border-gold shadow-lg" />
+          <a href="#home" className="flex items-center gap-4">
+            <div className="relative">
+              <img src={logoNew} alt="VIP Legal Academy" className="h-14 w-14 rounded-full object-cover object-center border-2 border-gold shadow-lg" />
+              <img src={starEffect} alt="" className="absolute -top-1 -right-1 w-6 h-6 pointer-events-none" />
+            </div>
             <div className="hidden sm:block">
               <h1 className="text-gold font-bold text-3xl font-playfair tracking-wide">
                 <span className="text-gold-light">V</span>I<span className="text-gold-light">P</span>
