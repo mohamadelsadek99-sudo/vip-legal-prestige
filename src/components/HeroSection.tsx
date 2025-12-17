@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Scale, ChevronDown } from "lucide-react";
-import logoStar from "@/assets/gallery/logo-star.jpg";
+import logoNew from "@/assets/gallery/logo-new.jpg";
+import starEffect from "@/assets/gallery/star-effect.png";
 
 // People images (right carousel) - no duplicates
 import people1 from "@/assets/gallery/people-1.jpg";
@@ -22,14 +23,12 @@ import course6 from "@/assets/gallery/course-6.jpg";
 import course7 from "@/assets/gallery/course-7.jpg";
 import coursePromo from "@/assets/gallery/course-promo.png";
 
-const promotionalMessages = [
-  "⚖️ لأن التميز القانوني يبدأ بالاختيار الصحيح — خصم 50% على جميع خدماتنا",
-  "🔔 لا تفوّت الفرصة! خصم 50% على كل الخدمات القانونية الآن"
-];
+// Combined ticker message
+const tickerMessage = "⚖️ لأن التميز القانوني يبدأ بالاختيار الصحيح — خصم 50% على جميع خدماتنا  •  🔔 لا تفوّت الفرصة! خصم 50% على كل الخدمات القانونية الآن";
 
 // Match both arrays to same length for synchronized rotation
-const peopleImages = [logoStar, people1, people2, people3, training1, training2, training3, training4, training5];
-const courseImages = [logoStar, course1, course2, course3, course4, course5, course6, course7, coursePromo];
+const peopleImages = [logoNew, people1, people2, people3, training1, training2, training3, training4, training5];
+const courseImages = [logoNew, course1, course2, course3, course4, course5, course6, course7, coursePromo];
 
 const HeroSection = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -48,7 +47,7 @@ const HeroSection = () => {
         <div 
           className="absolute inset-0 opacity-[0.03]"
           style={{
-            backgroundImage: `url(${logoStar})`,
+            backgroundImage: `url(${logoNew})`,
             backgroundRepeat: 'repeat',
             backgroundSize: '120px',
           }}
@@ -69,9 +68,8 @@ const HeroSection = () => {
         <div className="fixed top-20 left-0 right-0 z-40 mt-2">
           <div className="mx-4 overflow-hidden bg-gradient-to-r from-navy-dark via-navy to-navy-dark border-y border-gold/30 rounded-full shadow-lg">
             <div className="flex animate-marquee whitespace-nowrap py-2">
-              {[...promotionalMessages, ...promotionalMessages, ...promotionalMessages, ...promotionalMessages].map((msg, i) => (
-                <span key={i} className="inline-flex items-center gap-2 px-8 text-gold font-bold text-base md:text-lg">
-                  <span className="w-2 h-2 bg-gold rounded-full animate-pulse" />
+              {[tickerMessage, tickerMessage, tickerMessage].map((msg, i) => (
+                <span key={i} className="inline-flex items-center gap-4 px-12 text-gold font-bold text-base md:text-lg">
                   {msg}
                 </span>
               ))}
@@ -80,15 +78,21 @@ const HeroSection = () => {
         </div>
 
         <div className="flex flex-col items-center text-center max-w-5xl mx-auto mt-24">
-          {/* Logo - Larger and cropped to show star properly */}
+          {/* Logo with Star Effect */}
           <div className="relative mb-8 animate-scale-in">
             <div className="absolute inset-0 bg-gold/20 rounded-full blur-2xl scale-150" />
-            <img 
-              src={logoStar} 
-              alt="VIP Legal Academy Logo" 
-              className="w-48 h-48 md:w-64 md:h-64 rounded-full object-cover border-4 border-gold shadow-gold relative z-10"
-              style={{ objectPosition: 'center 35%' }}
-            />
+            <div className="relative">
+              <img 
+                src={logoNew} 
+                alt="VIP Legal Academy Logo" 
+                className="w-48 h-48 md:w-64 md:h-64 rounded-full object-cover border-4 border-gold shadow-gold relative z-10"
+              />
+              <img 
+                src={starEffect} 
+                alt="" 
+                className="absolute top-0 right-0 w-16 h-16 md:w-20 md:h-20 z-20 pointer-events-none"
+              />
+            </div>
           </div>
 
           {/* Academy Name */}
@@ -138,21 +142,19 @@ const HeroSection = () => {
               <div className="w-px h-full bg-gradient-to-b from-transparent via-gold/50 to-transparent" />
             </div>
 
-            {/* Course Images - Left - Same index for sync */}
-            <div className="flex-1 relative h-72 md:h-96 rounded-xl overflow-hidden border-2 border-gold/30 shadow-gold">
+            {/* Course Images - Left - Same index for sync - object-contain to show full image */}
+            <div className="flex-1 relative h-72 md:h-96 rounded-xl overflow-hidden border-2 border-gold/30 shadow-gold bg-navy-dark">
               {courseImages.map((img, index) => (
                 <img
                   key={index}
                   src={img}
                   alt={`كورسات الأكاديمية ${index + 1}`}
-                  className={`absolute inset-0 w-full h-full transition-opacity duration-700 ${
-                    index === 0 ? 'object-contain bg-navy-dark p-4' : 'object-cover'
-                  } ${
+                  className={`absolute inset-0 w-full h-full transition-opacity duration-700 object-contain p-2 ${
                     index === currentImageIndex ? 'opacity-100' : 'opacity-0'
                   }`}
                 />
               ))}
-              <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/50 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/50 to-transparent pointer-events-none" />
               <div className="absolute bottom-2 right-2 text-gold text-sm font-tajawal bg-navy-dark/70 px-2 py-1 rounded">
                 كورساتنا
               </div>

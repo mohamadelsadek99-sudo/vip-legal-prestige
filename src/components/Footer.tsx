@@ -1,5 +1,6 @@
 import { Scale, Phone, Mail, MapPin } from "lucide-react";
-import logo from "@/assets/gallery/logo.jpg";
+import logoNew from "@/assets/gallery/logo-new.jpg";
+import starEffect from "@/assets/gallery/star-effect.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -11,7 +12,10 @@ const Footer = () => {
           {/* Logo & Description */}
           <div className="md:col-span-2">
             <div className="flex items-center gap-3 mb-4">
-              <img src={logo} alt="VIP Legal Academy" className="h-14 w-14 rounded-full object-cover object-center border-2 border-gold" style={{ objectPosition: 'center' }} />
+              <div className="relative">
+                <img src={logoNew} alt="VIP Legal Academy" className="h-14 w-14 rounded-full object-cover object-center border-2 border-gold" />
+                <img src={starEffect} alt="" className="absolute -top-1 -right-1 w-6 h-6 pointer-events-none" />
+              </div>
               <div>
                 <h3 className="text-gold font-bold text-xl font-playfair">
                   <span className="text-gold-light">V</span>I<span className="text-gold-light">P</span> Legal Academy
