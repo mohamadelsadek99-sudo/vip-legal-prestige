@@ -65,24 +65,29 @@ const HeroSection = () => {
       <div className="absolute right-0 bottom-1/4 w-32 h-px bg-gradient-to-r from-transparent via-gold/50 to-transparent" />
 
       <div className="container mx-auto px-4 pt-20 relative z-10">
-        {/* Promotional Messages Banner - Rounded pill shape with margin */}
-        <div className="absolute top-20 left-4 right-4 overflow-hidden">
-          <div className="animate-marquee whitespace-nowrap text-gold font-bold text-lg md:text-xl py-3 bg-gold/10 backdrop-blur-sm border border-gold/20 rounded-full">
-            {[...promotionalMessages, ...promotionalMessages, ...promotionalMessages, ...promotionalMessages].map((msg, i) => (
-              <span key={i} className="inline-block px-8">{msg}</span>
-            ))}
+        {/* News Ticker Banner - Professional style with margin */}
+        <div className="fixed top-20 left-0 right-0 z-40 mt-2">
+          <div className="mx-4 overflow-hidden bg-gradient-to-r from-navy-dark via-navy to-navy-dark border-y border-gold/30 rounded-full shadow-lg">
+            <div className="flex animate-marquee whitespace-nowrap py-2">
+              {[...promotionalMessages, ...promotionalMessages, ...promotionalMessages, ...promotionalMessages].map((msg, i) => (
+                <span key={i} className="inline-flex items-center gap-2 px-8 text-gold font-bold text-base md:text-lg">
+                  <span className="w-2 h-2 bg-gold rounded-full animate-pulse" />
+                  {msg}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
 
-        <div className="flex flex-col items-center text-center max-w-5xl mx-auto mt-20">
-          {/* Logo - Cropped to show larger */}
+        <div className="flex flex-col items-center text-center max-w-5xl mx-auto mt-24">
+          {/* Logo - Larger and cropped to show star properly */}
           <div className="relative mb-8 animate-scale-in">
             <div className="absolute inset-0 bg-gold/20 rounded-full blur-2xl scale-150" />
             <img 
               src={logoStar} 
               alt="VIP Legal Academy Logo" 
-              className="w-44 h-44 md:w-56 md:h-56 rounded-full object-cover object-center border-4 border-gold shadow-gold relative z-10"
-              style={{ objectPosition: 'center 40%' }}
+              className="w-48 h-48 md:w-64 md:h-64 rounded-full object-cover border-4 border-gold shadow-gold relative z-10"
+              style={{ objectPosition: 'center 35%' }}
             />
           </div>
 
@@ -106,17 +111,17 @@ const HeroSection = () => {
             </h3>
           </div>
 
-          {/* Image Carousels - Synchronized */}
+          {/* Image Carousels - Synchronized with better sizing */}
           <div className="flex flex-col md:flex-row gap-6 mb-10 w-full max-w-4xl animate-fade-in-up animation-delay-100">
             {/* People Images - Right */}
-            <div className="flex-1 relative h-64 md:h-80 rounded-xl overflow-hidden border-2 border-gold/30 shadow-gold">
+            <div className="flex-1 relative h-72 md:h-96 rounded-xl overflow-hidden border-2 border-gold/30 shadow-gold">
               {peopleImages.map((img, index) => (
                 <img
                   key={index}
                   src={img}
                   alt={`فريق الأكاديمية ${index + 1}`}
-                  className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
-                    index === 0 ? 'bg-black object-contain' : 'bg-navy-dark'
+                  className={`absolute inset-0 w-full h-full transition-opacity duration-700 ${
+                    index === 0 ? 'object-contain bg-navy-dark p-4' : 'object-cover'
                   } ${
                     index === currentImageIndex ? 'opacity-100' : 'opacity-0'
                   }`}
@@ -134,14 +139,14 @@ const HeroSection = () => {
             </div>
 
             {/* Course Images - Left - Same index for sync */}
-            <div className="flex-1 relative h-64 md:h-80 rounded-xl overflow-hidden border-2 border-gold/30 shadow-gold">
+            <div className="flex-1 relative h-72 md:h-96 rounded-xl overflow-hidden border-2 border-gold/30 shadow-gold">
               {courseImages.map((img, index) => (
                 <img
                   key={index}
                   src={img}
                   alt={`كورسات الأكاديمية ${index + 1}`}
-                  className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
-                    index === 0 ? 'bg-black object-contain' : 'bg-navy-dark'
+                  className={`absolute inset-0 w-full h-full transition-opacity duration-700 ${
+                    index === 0 ? 'object-contain bg-navy-dark p-4' : 'object-cover'
                   } ${
                     index === currentImageIndex ? 'opacity-100' : 'opacity-0'
                   }`}

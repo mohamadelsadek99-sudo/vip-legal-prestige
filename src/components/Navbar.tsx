@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import logo from "@/assets/gallery/logo.jpg";
+import logoStar from "@/assets/gallery/logo-star.jpg";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,8 +20,8 @@ const Navbar = () => {
       <div className="container mx-auto px-6 md:px-10">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <a href="#home" className="flex items-center gap-4">
-            <img src={logo} alt="VIP Legal Academy" className="h-16 w-16 rounded-full object-cover border-2 border-gold shadow-lg" />
+<a href="#home" className="flex items-center gap-4">
+            <img src={logoStar} alt="VIP Legal Academy" className="h-14 w-14 rounded-full object-cover object-center border-2 border-gold shadow-lg" />
             <div className="hidden sm:block">
               <h1 className="text-gold font-bold text-3xl font-playfair tracking-wide">
                 <span className="text-gold-light">V</span>I<span className="text-gold-light">P</span>
